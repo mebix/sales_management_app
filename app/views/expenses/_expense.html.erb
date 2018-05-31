@@ -1,0 +1,7 @@
+<tr>
+  <td class="billing_at"><%= expense.billing_at %></td>
+  <td class="class_name"><%= expense.class_name %></td>
+  <td class= "name" ><%= link_to expense.name, edit_expense_path(expense) %></td>
+  <td class="price"><%= expense.price %></td>
+  <td class= "destroy" ><%= link_to "delete" , expense, method: :delete, data: { confirm: "You sure?"} %></td>
+</tr>

@@ -1,0 +1,13 @@
+<h1><%= link_to @project.name, edit_project_path(@project) %></h1>
+
+<h4><%= link_to "New Expense" , new_expense_path %></h4>
+<h4><%= link_to "Spread Sheet" , project_sheet_url(@project) %></h4>
+
+<% if @expenses.any? %>
+  <h4>Expenses(<%= @expenses.count %>)</h4>
+  <table class= 'table'>
+    <thead><th>Billing Date</th><th>Class Name</th><th>Name</th><th>Price</th></thead>
+    <tbody>
+      <%= render @expenses %>
+    </tbody>
+<% end %>

@@ -1,0 +1,37 @@
+<h1><%= @project.name %></h1>
+<div id="pivot" ></div>
+
+<h4><%= link_to "back" , @project %></h4>
+
+<script>
+
+//         var dateFormat = $.pivotUtilities.derivers.dateFormat;
+//         var sum = $.pivotUtilities.aggregatorTemplates.sum;
+//         var numberFormat = $.pivotUtilities.numberFormat;
+//         var intFormat = numberFormat({digitsAfterDecimal: 0});
+//
+// var msec = 0;
+// var d = new Date()
+//
+// console.log(gon.expenses)
+// for(i = 0  ;i < gon.expenses.length ; i++){
+//   msec =  Date.parse(gon.expenses[i]['billing_at']);
+//   d = new Date(msec)
+//   gon.expenses[i]['billing_at'] = d.getFullYear() + "/" + d.getMonth()
+//
+// }
+//      $(function(){
+//              $("#pivot").pivot(gon.expenses,
+//                  {
+//                      rows: ["class_name","name"],
+//                      cols: ["billing_at"],
+//                      aggregator: sum(intFormat)(["unit_price"])
+//                  }
+//
+//              );
+//
+//         });
+// $(function(){
+//     $(".pvtTable").addClass("table-striped");
+//   });
+</script>

@@ -1,0 +1,5 @@
+<tr>
+  <td class="project_number"><%= project.project_number %></td>
+  <td class= "project" ><%= link_to project.name , project %></td>
+  <td class= "project" > | <%= link_to 'delete' , project ,method: :delete, data: { confirm: "Sure?"} %></td>
+</tr>

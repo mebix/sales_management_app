@@ -1,0 +1,27 @@
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <%= form_for(@expense, url: yield(:url) ) do |f| %>
+      <%= render 'shared/error_messages' , object: f.object %>
+
+      <%= f.label :project_id %>
+      <%= f.collection_select :project_id, Project.all, :id, :name, {},{:class => "form-control"} %>
+
+      <%= f.label :billing_date %>
+      <%= f.date_field :billing_at ,class:'form-control' %>
+
+      <%= f.label :class_name %>
+      <%= f.text_field :class_name ,class:'form-control' %>
+
+      <%= f.label :name %>
+      <%= f.text_field :name ,class:'form-control' %>
+
+      <%= f.label :unit_price %>
+      <%= f.number_field :unit_price ,class:'form-control', step: 0.1 %>
+
+      <%= f.label :unit %>
+      <%= f.number_field :unit ,class:'form-control' , step: 0.1 %>
+
+      <%= f.submit yield(:botton_text) , class: "btn btn-primary" %>
+    <% end %>
+  </div>
+</div>

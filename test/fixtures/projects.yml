@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+project1:
+  name: project1
+  project_number: p1
+
+project2:
+  name: project1
+  project_number: p2
+
+<% 10.times.each do |n| %>
+Test_<%= n %>:
+  name: <%= "Test#{n+1}" %>
+  project_number: <%= "t#{n+1}" %>
+<% end %>

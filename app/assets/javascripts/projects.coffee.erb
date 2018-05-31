@@ -1,0 +1,33 @@
+# Place all the behaviors and hooks related to the matching controller here.
+# All this logic will automatically be available in application.js.
+# You can use CoffeeScript in this file: http://coffeescript.org/
+
+onPageLoad 'projects#sheet', ->
+  dateFormat = $.pivotUtilities.derivers.dateFormat;
+  sum = $.pivotUtilities.aggregatorTemplates.sum;
+  numberFormat = $.pivotUtilities.numberFormat;
+  intFormat = numberFormat({digitsAfterDecimal: 0});
+
+  msec = 0;
+  d = new Date();
+
+  console.log(gon.expenses);
+
+  for  data  in  gon.expenses
+    msec =  Date.parse(data['billing_at']);
+    d = new Date(msec)
+    data['billing_at'] = d.getFullYear() + "/" + d.getMonth()
+
+  $("#pivot").pivot(gon.expenses,
+           {
+               rows: ["class_name","name"],
+               cols: ["billing_at"],
+               aggregator: sum(intFormat)(["unit_price"])
+           }
+
+       );
+
+
+# $(function(){
+# $(".pvtTable").addClass("table-striped");
+# });

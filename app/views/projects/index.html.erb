@@ -1,0 +1,10 @@
+<h4>Projects</h4>
+
+<h4><%= link_to "New Project", new_project_path %></h4>
+
+<table class= 'table'>
+  <thead><th>Project ID</th><th>Name</th><th></th></thead>
+  <tbody>
+    <%= render @projects %>
+  </tbody>
+</table>
