@@ -26,7 +26,7 @@ class ProjectsControllerTest < ActionDispatch::IntegrationTest
     assert_select "div.alert" , "The form contains 1 error"
   end
 
-  test "delete" do
+  test "delete project" do
     get projects_path
     Project.all.each do |project|
       assert_select "a[href=?]", project_path(project) ,text: project.name

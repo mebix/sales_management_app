@@ -6,7 +6,7 @@ class Expense < ApplicationRecord
   validates :billing_at , presence: true
   validates :unit , presence: true
   validates :unit_price , presence: true
-  validates :deleted , default: false 
+  validates :deleted , inclusion: {in: [true, false]}
 
   # 未削除ユーザスコープ
   scope :active ,-> {where(deleted:false)}

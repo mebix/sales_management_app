@@ -1,0 +1,9 @@
+<h1>Departements</h1>
+<h4><%= link_to "New" , new_department_path %></h4>
+
+<table class= 'table'>
+  <thead><th>Department Name</th><th></th></thead>
+  <tbody>
+    <%= render @departments %>
+  </tbody>
+</table>

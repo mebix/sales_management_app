@@ -14,16 +14,16 @@ development:
   encoding: UTF8
   database: sales_management_app
   pool: 5
-  username: kobayashiyouta
-  password: 0201412yk
+  username: ec2-user
+  password: 
 
 test:
   adapter: postgresql
   encoding: UTF8
   database: sales_management_app_test
   pool: 5
-  username: kobayashiyouta
-  password: 0201412yk
+  username: ec2-user
+  password: 
 
 production:
   <<: *default

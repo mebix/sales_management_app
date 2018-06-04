@@ -1,0 +1,4 @@
+<tr>
+  <td class= "department" ><%= link_to department.name , edit_department_path(department) , data: { confirm: "In all project which this department joined, department's name will change. Sure?"}  %></td>
+  <td class= "department" > | <%= link_to 'delete' , department ,method: :delete, data: { confirm: "Sure?"} %></td>
+</tr>
