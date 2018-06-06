@@ -1,0 +1,10 @@
+<h1>ExpenseClasses of <%= @project.name %></h1>
+
+<h4><%= link_to "New Expense Class" , new_project_expense_class_path(@project.id) %></h4>
+
+<table class= 'table'>
+  <thead><th>Department ID</th><th>Name</th><th></th></thead>
+  <tbody>
+    <%= render @expense_classes %>
+  </tbody>
+</table>

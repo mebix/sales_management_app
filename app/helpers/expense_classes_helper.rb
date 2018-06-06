@@ -1,0 +1,2 @@
+module ExpenseClassesHelper
+end

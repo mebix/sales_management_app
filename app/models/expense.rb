@@ -8,7 +8,7 @@ class Expense < ApplicationRecord
   validates :unit_price , presence: true
   validates :deleted , inclusion: {in: [true, false]}
 
-  # 未削除ユーザスコープ
+  # 未削除expenseスコープ
   scope :active ,-> {where(deleted:false)}
 
   def price

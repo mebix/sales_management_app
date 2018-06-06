@@ -29,7 +29,6 @@ class DepartmentsController < ApplicationController
     if @department.update_attributes(department_params)
       flash[:success] = "Update Succeeded"
       redirect_to departments_path
-      
     else
       render 'edit'
     end

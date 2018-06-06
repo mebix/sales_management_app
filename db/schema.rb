@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_06_04_101238) do
+ActiveRecord::Schema.define(version: 2018_06_05_102341) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -21,6 +21,18 @@ ActiveRecord::Schema.define(version: 2018_06_04_101238) do
     t.date "deleted_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "expense_classes", force: :cascade do |t|
+    t.string "name"
+    t.boolean "deleted", default: false
+    t.date "deleted_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "project_id"
+    t.bigint "department_id"
+    t.index ["department_id"], name: "index_expense_classes_on_department_id"
+    t.index ["project_id"], name: "index_expense_classes_on_project_id"
   end
 
   create_table "expenses", force: :cascade do |t|
@@ -44,5 +56,7 @@ ActiveRecord::Schema.define(version: 2018_06_04_101238) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "expense_classes", "departments"
+  add_foreign_key "expense_classes", "projects"
   add_foreign_key "expenses", "projects"
 end

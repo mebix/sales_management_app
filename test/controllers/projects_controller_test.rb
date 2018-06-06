@@ -33,7 +33,7 @@ class ProjectsControllerTest < ActionDispatch::IntegrationTest
       assert_select "a[href=?]", project_path(project) ,text: 'delete'
     end
 
-    assert_difference 'Project.count' , -1 do
+    assert_difference 'Project.count', -1 do
       delete project_path(@project)
     end
     assert_redirected_to projects_path

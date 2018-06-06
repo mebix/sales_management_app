@@ -1,0 +1,5 @@
+<tr>
+  <td class="department"><%= expense_class.department.name %></td>
+  <td class= "name" ><%= link_to expense_class.name, edit_expense_class_path(expense_class) %></td>
+  <td class= "destroy" ><%= link_to "delete" , expense_class, method: :delete, data: { confirm: "You sure?"} %></td>
+</tr>
