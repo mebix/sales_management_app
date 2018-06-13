@@ -36,12 +36,12 @@ class ExpenseClassesController < ApplicationController
    end
  end
 
- def destroy
-   @expense_class = ExpenseClass.find(params[:id])
-   @expense_class.update_attributes(deleted:true , deleted_at:Time.zone.now)
-   flash[:success] = "Destroy Succeeded"
-   redirect_to project_expense_classes_path(@expense_class.project.id)
- end
+  def destroy
+    @expense_class = ExpenseClass.find(params[:id])
+    @expense_class.update_attributes(deleted:true , deleted_at:Time.zone.now)
+    flash[:success] = "Destroy Succeeded"
+    redirect_to project_expense_classes_path(@expense_class.project.id)
+  end
 
   private
     def expense_class_params

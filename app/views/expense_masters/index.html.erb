@@ -1,0 +1,12 @@
+<h4>This is <%= @project.name%> 's expense_masters</h4>
+
+<h4><%= link_to "New ExpenseMaster" , new_project_expense_master_path((@project.id)) %></h4>
+
+<table class= 'table'>
+  <thead><th>Department</th><th>Class</th><th>Name</th></thead>
+  <tbody>
+    <%= render @expense_masters %>
+  </tbody>
+</table>
+
+<h4><%= link_to "Back to Project" , project_path(@project.id) %></h4>

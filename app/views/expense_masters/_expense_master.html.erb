@@ -1,0 +1,6 @@
+<tr>
+  <td class= "department" ><%= expense_master.expense_class.department.name %></td>
+  <td class= "expense_class" ><%= expense_master.expense_class.name %></td>
+  <td class= "name" ><%= link_to expense_master.name , edit_expense_master_path(expense_master) %></td>
+  <td class= "destroy" ><%= link_to "delete" , expense_master, method: :delete, data: { confirm: "You sure?"} %></td>
+</tr>

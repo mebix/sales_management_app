@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+master1:
+  name: master1
+  expense_class: one
+  unit_text: unit1
+  deleted: false
+
+master2:
+  name: master2
+  expense_class: two
+  unit_text: unit2
+  deleted: false

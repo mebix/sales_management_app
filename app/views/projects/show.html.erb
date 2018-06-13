@@ -1,7 +1,9 @@
 <h1><%= link_to @project.name, edit_project_path(@project) %></h1>
 
 <h4><%= link_to "ExpenseClass Settings" , project_expense_classes_path(@project) %></h4>
+<h4><%= link_to "ExpenseMaster Settings" , project_expense_masters_path(@project) %></h4>
 <h4><%= link_to "New Expense" , new_expense_path %></h4>
+
 <h4><%= link_to "Spread Sheet" , project_sheet_url(@project) %></h4>
 
 <% if @expenses.any? %>

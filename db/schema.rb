@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_06_05_102341) do
+ActiveRecord::Schema.define(version: 2018_06_12_035415) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -33,6 +33,17 @@ ActiveRecord::Schema.define(version: 2018_06_05_102341) do
     t.bigint "department_id"
     t.index ["department_id"], name: "index_expense_classes_on_department_id"
     t.index ["project_id"], name: "index_expense_classes_on_project_id"
+  end
+
+  create_table "expense_masters", force: :cascade do |t|
+    t.string "name"
+    t.bigint "expense_class_id"
+    t.string "unit_text"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.boolean "deleted", default: false
+    t.date "deleted_at"
+    t.index ["expense_class_id"], name: "index_expense_masters_on_expense_class_id"
   end
 
   create_table "expenses", force: :cascade do |t|
@@ -58,5 +69,6 @@ ActiveRecord::Schema.define(version: 2018_06_05_102341) do
 
   add_foreign_key "expense_classes", "departments"
   add_foreign_key "expense_classes", "projects"
+  add_foreign_key "expense_masters", "expense_classes"
   add_foreign_key "expenses", "projects"
 end
