@@ -1,11 +1,11 @@
 class ExpensesController < ApplicationController
 
   def new
-    @expense = Expense.new
+    @expense = Project.find(params[:project_id]).expenses.new
   end
 
   def create
-    @expense = Expense.new(expense_params)
+    @expense = Project.find(params[:project_id]).expenses.new(expense_params)
     if @expense.save
       @projects = Project.all
       flash[:info] = "Expense Created."
@@ -35,14 +35,23 @@ class ExpensesController < ApplicationController
    flash[:success] = "Destroy Succeeded"
    redirect_to project_path(@expense.project.id)
  end
+ 
+ def bill_index
+   @project = Project.find(params[:project_id])
+   @expenses = @project.expenses.where(expense_type: 0).active
+ end
 
+ def record_index
+   @project = Project.find(params[:project_id])
+   @expenses = @project.expenses.where(expense_type: 1).active
+ end
   private
     def expense_params
       params.require(:expense).permit(:project_id,
-          :name,
-          :class_name,
           :billing_at,
           :unit_price,
-          :unit)
+          :unit,
+          :type,
+          :contract_expense_id)
     end
 end

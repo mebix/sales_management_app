@@ -1,0 +1,7 @@
+<% provide(:url, project_contract_expenses_path(@contract_expense.project.id) )%>
+<% provide(:botton_text, "Create Contract expense" )%>
+
+<h4><%= @contract_expense.project.name %></h4>
+<h4>new ContractExpense</h4>
+
+<%= render 'form' %>

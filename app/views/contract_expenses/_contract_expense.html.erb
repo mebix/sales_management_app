@@ -1,0 +1,11 @@
+<tr>
+  <td class="department"><%= contract_expense.expense_master.expense_class.department.name %></td>
+  <td class= "class_name" ><%= link_to contract_expense.expense_master.expense_class.name , edit_contract_expense_path(contract_expense) %></td>
+  <td class= "name" ><%= contract_expense.expense_master.name %></td>
+  <td class= "unit_price" ><%= contract_expense.date.strftime("%Y-%m") %></td>
+  <td class= "unit_price" ><%= contract_expense.unit_price %></td>
+  <td class= "unit" ><%= contract_expense.unit %></td>
+  <td class= "unit_text" ><%= contract_expense.expense_master.unit_text %></td>
+  <td class= "status" ><%= contract_expense.status %></td>
+  <td class= "last_update" ><%= contract_expense.updated_at %></td>
+</tr>

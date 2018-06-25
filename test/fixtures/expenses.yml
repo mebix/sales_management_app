@@ -1,13 +1,3 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  project: one
-  class_name: MyString
-  name: MyString
-  billing_at: 2018-05-05
 
-two:
-  project: two
-  class_name: MyString
-  name: MyString
-  billing_at: 2018-05-05

@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  date: 2018-06-13
+  unit_price: 
+  unit: 1
+  expense_master_id: one
+
+two:
+  date: 2018-06-13
+  unit_price: 
+  unit: 1
+  expense_master_id: two

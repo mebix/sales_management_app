@@ -1,0 +1,7 @@
+<% provide(:url, contract_expense_path )%>
+<% provide(:botton_text, "Update Contract expense" )%>
+
+<h4><%= @contract_expense.project.name %></h4>
+<h4>edit ContractExpense</h4>
+
+<%= render 'form' %>

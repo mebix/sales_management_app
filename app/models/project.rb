@@ -4,6 +4,7 @@ class Project < ApplicationRecord
             uniqueness:{case_sensitive:false}
   has_many :expenses
   has_many :expense_classes
+  has_many :contract_expenses
   
   # プロジェクト配下にある費目マスターをすべて取ってくる
   def expense_masters

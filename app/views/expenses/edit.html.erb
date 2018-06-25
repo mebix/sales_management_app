@@ -2,6 +2,6 @@
 <% provide(:botton_text, "Update expense" )%>
 
 <h4>Project: <%= @expense.project.name%></h4>
-<h4><%= @expense.name %></h4>
+<h4><%= @expense.contract_expense.expense_master.name %></h4>
 
 <%= render 'form'%>

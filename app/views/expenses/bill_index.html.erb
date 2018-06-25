@@ -1,0 +1,10 @@
+<% if @expenses.any? %>
+  <h4>Expenses(<%= @expenses.count %>)</h4>
+  <table class= 'table'>
+    <thead><th>Type</th><th>Billing Date</th><th>Class Name</th><th>Name</th><th>Price</th></thead>
+    <tbody>
+      <%= render @expenses %>
+    </tbody>
+<% end %>
+
+<h4><%= link_to "Back to Project" , project_path(@project.id) %></h4>

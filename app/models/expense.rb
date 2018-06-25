@@ -1,12 +1,13 @@
 class Expense < ApplicationRecord
   require 'bigdecimal'
   belongs_to :project
-  validates :name , presence: true , length: {maximum: 50 }
-  validates :class_name , presence: true , length: {maximum: 50 }
+  belongs_to :contract_expense
   validates :billing_at , presence: true
   validates :unit , presence: true
   validates :unit_price , presence: true
   validates :deleted , inclusion: {in: [true, false]}
+  
+  enum expense_type: { bill: 0, record: 1 }
 
   # 未削除expenseスコープ
   scope :active ,-> {where(deleted:false)}
